@@ -56,9 +56,13 @@ class MainActivity : AppCompatActivity() {
         tv_TailPercent = findViewById(R.id.tv_tails_percent)
         et_NumberOfFlips = findViewById(R.id.et_numberof_flips)
         bt_Simulate = findViewById(R.id.bt_simulate)
+
+        et_NumberOfFlips.visibility = View.INVISIBLE
+        bt_Simulate.visibility =View.INVISIBLE
     }
 
     private fun initListners() {
+
         sw_Simulate.setOnCheckedChangeListener { buttonView, isChecked -> enableSim(isChecked) }
         bt_Flip.setOnClickListener { flip() }
         bt_Reset.setOnClickListener { reset() }
@@ -68,11 +72,11 @@ class MainActivity : AppCompatActivity() {
     private fun enableSim(checked: Boolean) {
 
         if (checked) {
-            //Log.i("test","switch is On")
+            Log.i("test","switch is On")
             et_NumberOfFlips.visibility = View.VISIBLE
             bt_Simulate.visibility = View.VISIBLE
         } else {
-            // Log.i("test","switch is Off")
+            Log.i("test","switch is Off")
             et_NumberOfFlips.visibility = View.INVISIBLE
             bt_Simulate.visibility = View.INVISIBLE
         }
@@ -110,8 +114,8 @@ class MainActivity : AppCompatActivity() {
         var tailPercentResult = 0.0
 
         if (total != 0) {
-            headPercentResult = round((heads.toDouble() / total) * 100)
-            tailPercentResult = round((tails.toDouble() / total) * 100)
+            headPercentResult = round((heads.toDouble() / total) * 10000)/100
+            tailPercentResult = round((tails.toDouble() / total) * 10000)/100
         }
 
         tv_HeadPercent.text = "Heads : $headPercentResult %"

@@ -184,7 +184,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/pb_tails_percent"
         app:layout_constraintVertical_bias="0.19999999"
-        tools:visibility="gone" />
+        tools:visibility="invisible" />
 
     <Button
         android:id="@+id/bt_simulate"
@@ -202,5 +202,5 @@
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/et_numberof_flips"
         app:layout_constraintTop_toTopOf="@+id/et_numberof_flips"
-        tools:visibility="gone" />
+        tools:visibility="invisible" />
 </androidx.constraintlayout.widget.ConstraintLayout>
